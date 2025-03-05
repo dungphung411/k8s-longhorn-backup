@@ -18,7 +18,9 @@ Bạn có thể sử dụng script này để kiểm tra môi trường Longhorn
    ```bash
    curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.8.0/scripts/environment_check.sh | bash
 ```
-## Các lệnh velero với restore 
+## Cài đặt Longhorn
+Longhorn hiện tại hỗ trợ rất nhiều cách cài: Kubectl, Helm, Flux, ArgoCd,... 
+Đọc thêm ở đây: https://longhorn.io/docs/1.8.0/deploy/install/
 ```bash
 velero restore create --from-backup <NAME> # restore bản backup
 velero get restore # list cac ban restore 
