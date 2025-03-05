@@ -38,12 +38,11 @@ kubectl get pods \
 
 ## Setup Longhorn
 Sau khi cài đặt Longhorn, tiện nhất là dùng Rancher để quản lí Longhorn storage <br>
-Tuy nhiên cũng có thể tự dùng Ui longhorn không cần rancher (tham khảo: https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/)
-
+Tuy nhiên cũng có thể tự dùng Ui longhorn không cần rancher (tham khảo: https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/) <br>
+Vào được Longhorn xong, ta phải thiết kế nơi để backup dữ liệu vào: Trỏ chuột vào setting --> Backup Target 
+![](https://longhorn.io/img/screenshots/backup-target/page.png)
+Tiếp đó chọn new backup target, hoặc sửa luôn default backup target
+![](https://longhorn.io/img/screenshots/backup-target/edit.png)
 ```bash
-#vao folder minh muon clone ve, neu bi loi hay chay lai voi quyen root
-git clone https://github.com/dungphung411/velero-backup-csc.git
-cd ./velero-backup-csc/velero-setup 
-chmod +x k8s_add_velero.sh && chmod +x velero_install.sh
-sh ./velero_install.sh && sh ./k8s_add_velero.sh
+#vao folder m
 ```
