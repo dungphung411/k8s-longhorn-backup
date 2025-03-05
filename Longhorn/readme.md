@@ -1,5 +1,5 @@
 
-# Backup and Restore Kubernetes Applications Using velero
+# Backup and Restore Kubernetes Applications Using Longhorn
 ![Introduction](https://longhorn.io/img/logos/longhorn-icon-color.png)
 
 
@@ -36,10 +36,9 @@ kubectl get pods \
 --watch
 ```
 
-## Setup velero 
-Đảm bảo máy chạy đã cài kubectl, và đã kết nối với cluster K8S cần backup. <br>
-Sửa file credentials_velero với access key và secret key bạn có.
-
+## Setup Longhorn
+Sau khi cài đặt Longhorn, tiện nhất là dùng Rancher để quản lí Longhorn storage <br>
+Tuy nhiên cũng có thể tự dùng Ui longhorn không cần rancher (tham khảo: https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/)
 
 ```bash
 #vao folder minh muon clone ve, neu bi loi hay chay lai voi quyen root
