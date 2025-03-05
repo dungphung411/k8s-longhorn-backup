@@ -43,9 +43,24 @@ Vào được Longhorn xong, ta phải thiết kế nơi để backup dữ liệ
 ![](https://longhorn.io/img/screenshots/backup-target/page.png)
 Tiếp đó chọn new backup target, hoặc sửa luôn default backup target
 ![](https://longhorn.io/img/screenshots/backup-target/edit.png)
-
+### Với S3
+Tạo trước 1 secret ở namespace longhorn-system. ( cái này là khóa để access vào bucket )
 ```bash
-// Điền url bucket
+// Tạo secret
+kubectl create secret generic <your-secret> \
+    --from-literal=AWS_ACCESS_KEY_ID=<your-aws-access-key-id> \
+    --from-literal=AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key> \
+    -n longhorn-system
+```
+```bash
+// Ở URL điền url bucket
 s3://<your-bucket-name>@<your-aws-region>/mypath/
-// Điền tên secret ( dùng lệnh: kubectl get secret -n longhorn-system )
+// Ở Credential tên secret ( dùng lệnh: kubectl get secret -n longhorn-system )
+```
+### Với NFS 
+Đơn giản hơn,, không cần điền credential, chỉ cần url đến cái share sever đấy thôi
+Ví dụ:
+```bash
+nfs://longhorn-test-nfs-svc.default:/opt/backupstore
+nfs://10.200.10.20:/share/nfsk8s/
 ```
