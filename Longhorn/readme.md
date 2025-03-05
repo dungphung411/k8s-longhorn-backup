@@ -36,13 +36,16 @@ kubectl get pods \
 --watch
 ```
 
-## Setup Longhorn
+## Setup Longhorn backup target
 Sau khi cài đặt Longhorn, tiện nhất là dùng Rancher để quản lí Longhorn storage <br>
 Tuy nhiên cũng có thể tự dùng Ui longhorn không cần rancher (tham khảo: https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/) <br>
 Vào được Longhorn xong, ta phải thiết kế nơi để backup dữ liệu vào: Trỏ chuột vào setting --> Backup Target 
 ![](https://longhorn.io/img/screenshots/backup-target/page.png)
 Tiếp đó chọn new backup target, hoặc sửa luôn default backup target
 ![](https://longhorn.io/img/screenshots/backup-target/edit.png)
+
 ```bash
-#vao folder m
+// Điền url bucket
+s3://<your-bucket-name>@<your-aws-region>/mypath/
+// Điền tên secret ( dùng lệnh: kubectl get secret -n longhorn-system )
 ```
