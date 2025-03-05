@@ -2,6 +2,8 @@
 # Backup and Restore Kubernetes Applications Using velero
 
 [![Watch the video](https://img.youtube.com/vi/hV98fuCQJ48/maxresdefault.jpg)](https://youtu.be/hV98fuCQJ48)
+![Introduction](https://th.bing.com/th/id/OIP.5Ro6BaZ9sFTbxClpQ_Z9uwHaDN?rs=1&pid=ImgDetMain)
+
 
 
 ## Chuẩn bị 
