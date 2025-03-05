@@ -19,13 +19,13 @@ Bạn có thể sử dụng script này để kiểm tra môi trường Longhorn
    curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.8.0/scripts/environment_check.sh | bash
 ```
 ## Cài đặt Longhorn
-Longhorn hiện tại hỗ trợ rất nhiều cách cài: Kubectl, Helm, Flux, ArgoCd,... 
+Longhorn hiện tại hỗ trợ rất nhiều cách cài: Kubectl, Helm, Flux, ArgoCd,... <br>
 Đọc thêm ở đây: https://longhorn.io/docs/1.8.0/deploy/install/
 ```bash
-velero restore create --from-backup <NAME> # restore bản backup
-velero get restore # list cac ban restore 
-velero restore logs <RESTORE_NAME>      # doc logs ban restore minh muon
-
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.8.0/deploy/longhorn.yaml
+kubectl get pods \
+--namespace longhorn-system \
+--watch
 ```
 
 ## Setup velero 
