@@ -18,6 +18,14 @@ Bạn có thể sử dụng script này để kiểm tra môi trường Longhorn
    ```bash
    curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.8.0/scripts/environment_check.sh | bash
 ```
+Một số pack có thể thiếu, thiếu gì chọn nấy.
+  ```bash
+apt-get install open-iscsi -y
+modprobe iscsi_tcp
+apt-get install nfs-common -y
+sudo systemctl stop multipathd
+sudo systemctl disable multipathd
+  ```
 ## Cài đặt Longhorn
 Longhorn hiện tại hỗ trợ rất nhiều cách cài: Kubectl, Helm, Flux, ArgoCd,... <br>
 Đọc thêm ở đây: https://longhorn.io/docs/1.8.0/deploy/install/
