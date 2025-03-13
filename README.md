@@ -58,6 +58,7 @@ NAME              TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
 wordpress         NodePort   10.110.150.183   <none>        80:30080/TCP     85m
 wordpress-mysql   NodePort   10.98.178.225    <none>        3306:30036/TCP   85m
 ```
+![](https://drive.google.com/file/d/1JR0aLk2jmvFqPDxA6UPmgIGDneVmwzTL/view?usp=sharing)
 Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào database
 ## Quy trình backup và restore, migration.
 Xem thêm các quy trình tạo backup, restore backup ở video
