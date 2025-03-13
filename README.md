@@ -8,9 +8,11 @@
 ## Cài đặt Longhorn.
 Các bước cài đặt Longhorn xem ở folder longhorninstall
 Đảm bảo longhorn được cài và truy cập được vào backup target
-Nên dùng rancher để quản lí Longhorn, vì giao diện dễ nhìn
+Nên dùng Rancher để quản lí Longhorn, vì giao diện dễ nhìn
 
 ## Quy trình deploy ứng dụng.
+Ở đây dùng sẵn một application nhỏ: Wordpress với MySQLdatabase <br>
+
 
 ## Quy trình backup và restore, migration.
 
