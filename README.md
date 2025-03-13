@@ -25,7 +25,29 @@ git clone https://github.com/dungphung411/k8s-longhorn-backup.git && cd ./k8s-lo
 kubectl apply -f predefine.yaml
 kubectl apply -f sql-deployment.yaml
 kubectl apply -f wp-deployment.yaml
+```
+Ta được
+```bash
+Cloning into 'k8s-longhorn-backup'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (99/99), done.
+remote: Compressing objects: 100% (74/74), done.
+remote: Total 99 (delta 23), reused 38 (delta 6), pack-reused 0 (from 0)
+Receiving objects: 100% (99/99), 23.80 KiB | 23.80 MiB/s, done.
+Resolving deltas: 100% (23/23), done.
+namespace/wordpress created
+secret/mysql-pass created
+service/wordpress-mysql created
+persistentvolumeclaim/mysql-pv-claim created
+deployment.apps/wordpress-mysql created
+service/wordpress created
+persistentvolumeclaim/wp-pv-claim created
+deployment.apps/wordpress created
 
+kubectl get deployment -n wordpress
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+wordpress         1/1     1            1           105s
+wordpress-mysql   1/1     1            1           105s
 ```
 Kiểm tra service ứng dụng ta có frontend wordpress chạy trên port 30080 và backend sql chạy trên port 30036 <br>
 Có thể truy cập vào database sql thông qua các ứng dụng quản lí db, ip là <NODE-IP>, username là wordpress, mật khẩu xem ở file predefine.yaml <br>
