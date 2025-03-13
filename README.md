@@ -22,7 +22,7 @@ longhorn-static      driver.longhorn.io   Delete          Immediate           tr
 Triển khai ứng dụng lên cụm 1 
 ```bash 
 git clone https://github.com/dungphung411/k8s-longhorn-backup.git && cd ./k8s-longhorn-backup/lh-example
-kubectl apply -f /*.yaml
+kubectl apply -f ./*.yaml
 
 ```
 Kiểm tra service ứng dụng ta có frontend wordpress chạy trên port 30080 và backend sql chạy trên port 30036 <br>
