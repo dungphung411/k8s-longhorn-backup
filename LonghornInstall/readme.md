@@ -4,7 +4,7 @@
 
 
 
-## Chuẩn bị 
+## CHUẨN BỊ
 Mỗi node trong cụm Kubernetes, nơi Longhorn được cài đặt, phải đáp ứng các yêu cầu sau:
 1. Một runtime container tương thích với Kubernetes (Docker v1.13+, containerd v1.3.7+, v.v.).
 2. Kubernetes phiên bản >= v1.25.
@@ -26,7 +26,7 @@ apt-get install nfs-common -y
 sudo systemctl stop multipathd
 sudo systemctl disable multipathd
   ```
-## Cài đặt Longhorn
+## CÀI ĐẶT LONGHORN
 Longhorn hiện tại hỗ trợ rất nhiều cách cài: Kubectl, Helm, Flux, ArgoCd,... <br>
 Đọc thêm ở đây: https://longhorn.io/docs/1.8.0/deploy/install/
 ```bash
@@ -36,14 +36,14 @@ kubectl get pods \
 --watch
 ```
 
-## Setup Longhorn backup target
+## SETUP LONGHORN BACKUP TARGET
 Sau khi cài đặt Longhorn, tiện nhất là dùng Rancher để quản lí Longhorn storage <br>
 Tuy nhiên cũng có thể tự dùng Ui longhorn không cần rancher (tham khảo: https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/) <br>
 Vào được Longhorn xong, ta phải thiết kế nơi để backup dữ liệu vào: Trỏ chuột vào setting --> Backup Target 
 ![](https://longhorn.io/img/screenshots/backup-target/page.png)
 Tiếp đó chọn new backup target, hoặc sửa luôn default backup target
 ![](https://longhorn.io/img/screenshots/backup-target/edit.png)
-### Với S3
+#### Với S3
 Tạo trước 1 secret ở namespace longhorn-system. ( cái này là khóa để access vào bucket )
 ```bash
 // Tạo secret
@@ -57,10 +57,27 @@ kubectl create secret generic <your-secret> \
 s3://<your-bucket-name>@<your-aws-region>/mypath/
 // Ở Credential tên secret ( dùng lệnh: kubectl get secret -n longhorn-system )
 ```
-### Với NFS 
+#### Với NFS 
 Đơn giản hơn,, không cần điền credential, chỉ cần url đến cái share sever đấy thôi
 Ví dụ:
 ```bash
 nfs://longhorn-test-nfs-svc.default:/opt/backupstore
 nfs://10.200.10.20:/share/nfsk8s/
 ```
+#### Với Cloudian
+Tạm thời thử nghiệm thành công với cloudian node sẵn ip. Còn config cloudian với domain url thì chưa thành công do nhiều yếu tố. Tạo secret ở trong file "cloudian.sh" <br>
+```bash
+// Ở URL điền url bucket
+s3://<your-bucket-name>@<your-aws-region>/mypath/
+// Ví dụ 
+s3://longhorn@hn/stableapp/
+
+```
+#### Với mục Credential Secret
+Run command 
+```bash 
+kubectl get secret -n longhorn-system
+```
+List name secret ra <br>
+Backup target nào dùng secret nào thì điền tên nó vào <br>
+Lưu ý các backup target có thể trùng secret nhưng ko thể trùng url 
