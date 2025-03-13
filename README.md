@@ -22,7 +22,7 @@ longhorn-static      driver.longhorn.io   Delete          Immediate           tr
 Triển khai ứng dụng lên cụm 1 
 ```bash 
 git clone https://github.com/dungphung411/k8s-longhorn-backup.git && cd ./k8s-longhorn-backup/lh-example
-kubectl apply -f ./*
+kubectl apply -f /*.yaml
 
 ```
 Kiểm tra service ứng dụng ta có frontend wordpress chạy trên port 30080 và backend sql chạy trên port 30036 <br>
@@ -34,6 +34,6 @@ NAME              TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
 wordpress         NodePort   10.110.150.183   <none>        80:30080/TCP     85m
 wordpress-mysql   NodePort   10.98.178.225    <none>        3306:30036/TCP   85m
 ```
-Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào databasedatabase
+Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào database
 ## Quy trình backup và restore, migration.
-
+Xem thêm các quy trình tạo backup, restore backup ở video
