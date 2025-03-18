@@ -2,7 +2,15 @@
 # Backup and Restore Kubernetes Applications Using Longhorn
 ![Introduction](https://longhorn.io/img/logos/longhorn-icon-color.png)
 
+## Giới thiệu 
+Longhorn là một hệ thống lưu trữ phân tán mã nguồn mở, được thiết kế để cung cấp khả năng lưu trữ block mạnh mẽ và dễ sử dụng trong môi trường Kubernetes. Phần mềm này được phát triển bởi Rancher Labs nhằm đáp ứng nhu cầu lưu trữ dữ liệu linh hoạt và hiệu quả cho các ứng dụng chạy trong container. <br>
 
+Các tính năng nổi bật của Longhorn: <br>
+Dễ dàng triển khai: Longhorn có thể được cài đặt trực tiếp thông qua giao diện Helm hoặc Rancher, chỉ với vài cú click chuột. <br>
+Snapshot và Backup: Hỗ trợ tạo snapshot và backup của dữ liệu nhanh chóng, đảm bảo tính toàn vẹn và khôi phục dễ dàng khi cần. <br>
+Khả năng nhân bản: Dữ liệu được nhân bản (replication) trên nhiều node trong cluster, giúp tăng cường tính sẵn sàng và bảo vệ dữ liệu khỏi lỗi phần cứng. <br>
+Khôi phục dữ liệu nhanh chóng: Tính năng rebuild tự động giúp đảm bảo tính liên tục của dịch vụ ngay cả khi một noe gặp sự cố.<br>
+Hỗ trợ giao diện API: API của Longhorn cho phép tích hợp linh hoạt với các công cụ tự động hóa và quản lý hệ thống khác.<br>
 
 ## CHUẨN BỊ
 Mỗi node trong cụm Kubernetes, nơi Longhorn được cài đặt, phải đáp ứng các yêu cầu sau:
