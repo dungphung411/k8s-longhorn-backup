@@ -63,19 +63,19 @@ wordpress-mysql   NodePort   10.98.178.225    <none>        3306:30036/TCP   85m
 
 Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào database
 ## Quy trình backup và restore, migration.
-[Download the file here](https://drive.google.com/uc?export=download&id=1I4-FAxAspM91ryLySnJJ5XOp3sqGVxpp)
+![Alt text](https://drive.google.com/uc?export=download&id=1I4-FAxAspM91ryLySnJJ5XOp3sqGVxpp)
 - Đầu tiên ta vào UI Longhorn ở cụm 1, ở góc trên màn hình chuyển sang tab "Volume"
-[Download the file here](https://drive.google.com/uc?export=download&id=1EVdXwmtARhDzE2hvQpV6K9O8jYdhTACF)
+![Alt text](https://drive.google.com/uc?export=download&id=1EVdXwmtARhDzE2hvQpV6K9O8jYdhTACF)
 - Ta chọn 2 volume cần backup của ứng dụng wordpress, đánh tag label và để full backup ( lần đầu backup nên để full, sau có thể ko cần để tối ưu dụng lượng)
-[Download the file here](https://drive.google.com/uc?export=download&id=1iQa3aOqXMK5TH01ZUsce4TJgV73AX6Rq)
+![Alt text](https://drive.google.com/uc?export=download&id=1iQa3aOqXMK5TH01ZUsce4TJgV73AX6Rq)
 - Chờ một lúc, vào tab "Backup" để xem volume của mình đã được backup hay chưa, ở đây cũng có thể xem thông tin về bản backup này
 
 - Tiến hành vào cụm 2 để triển khai ứng dụng, ai chỉ có 1 cụm lab có thể ```kubectl delete ns wordpress``` để xóa project đi. Tạo sẵn namespace wordpress trên cụm 2 ``` kubectl create ns wordpress ``` 
 - Nếu config longhorn backup target 2 cụm đều trỏ vào cùng một nơi lưu trữ dữ liệu ( NFS, S3, EBS,..) thì khi đó những bản ghi back up sẽ xuất hiện ở trong tab "back up" của cụm 2 luôn.
 - Chọn tên backup cần restore, có thể chọn "Restore latest backup" hoặc bấm vào tên để chọn bản mình muốn backup. Tick chọn "Using previous name" để giữ lại tên và config của PV, PVC. Rồi chọn backup nó
-[Download the file here](https://drive.google.com/uc?export=download&id=1LlASSxz7As583eOG1gapqICBlVjpt65T)
+![Alt text](https://drive.google.com/uc?export=download&id=1LlASSxz7As583eOG1gapqICBlVjpt65T)
 - Quay trở lại tab "volume" ta thấy volume đã được restore, tiến hành dựng lại pv, pvc từ volume. Đơn giản là dùng previous pvc, nó sẽ tự dựng lại tên của đúng PV, PVC ở workload cũ. 
-[Download the file here](https://drive.google.com/uc?export=download&id=1bgP-yzifk5XqH4sdx7XXK4OW3bCIntfs)
+![Alt text](https://drive.google.com/uc?export=download&id=1bgP-yzifk5XqH4sdx7XXK4OW3bCIntfs)
 - Tiến hành deploy lại ứng dụng ở trên cụm 2, xem folder lh-example để chạy lại ứng dụng
 - Ta thấy ứng dụng hoạt động bình thường với toàn bộ dữ liệu được chuyển đổi từ cụm cũ sang cụm mới.
 ## Chi tiết các bước xem ở video
