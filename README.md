@@ -66,5 +66,5 @@ Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Đ
 - Đầu tiên ta vào UI Longhorn ở cụm 1, ở góc trên màn hình chuyển sang tab "Volume"
 - Ta chọn 2 volume cần backup của ứng dụng wordpress, đánh tag label và để full backup ( lần đầu backup nên để full, sau có thể ko cần để tối ưu dụng lượng)
 - Chờ một lúc, vào tab "Backup" để xem volume của mình đã được backup hay chưa, ở đây cũng có thể xem thông tin về bản backup này
-- Tiến hành vào cụm 2 để triển khai ứng dụng, ai chỉ có 1 cụm lab có thể ```bash kubectl delete ns wordpress``` để xóa project đi.
+- Tiến hành vào cụm 2 để triển khai ứng dụng, ai chỉ có 1 cụm lab có thể ``` kubectl delete ns wordpress``` để xóa project đi.
 ## Chi tiết các bước xem ở video
