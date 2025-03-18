@@ -1,16 +1,16 @@
-# K8S LONGHORN BACKUP PROCESS
+# **K8S LONGHORN BACKUP PROCESS
 
-## Chuẩn bị.
+## **Chuẩn bị.
 1. Có cụm K8S chạy version 1.25 đổ lên
 2. Các cụm có bộ nhớ trong lớn, 50GB mỗi node là tốt (để 30 cũng được nhưng yếu)
 3. Có một ứng dụng để deploy 
 
-## Cài đặt Longhorn.
+## **Cài đặt Longhorn.
 Các bước cài đặt Longhorn xem ở folder longhorninstall <br>
 Đảm bảo longhorn được cài và truy cập được vào backup target <br>
 Nên dùng Rancher để quản lí Longhorn, vì giao diện dễ nhìn <br>
 
-## Quy trình deploy ứng dụng.
+## **Quy trình deploy ứng dụng.
 Ở đây dùng sẵn một application nhỏ: Wordpress với MySQLdatabase <br>
 Đảm bảo rằng longhorn được cài lên cụm trước, đảm bảo longhorn được set là default storage class ( nếu ko thì khi tạo pv, pvc phải set thêm storageclass namename) 
 ```bash
@@ -62,7 +62,7 @@ wordpress-mysql   NodePort   10.98.178.225    <none>        3306:30036/TCP   85m
 ![Alt text](https://drive.google.com/uc?export=view&id=1JR0aLk2jmvFqPDxA6UPmgIGDneVmwzTL)
 
 Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào database
-## Quy trình backup và restore, migration.
+## **Quy trình backup và restore, migration.
 ![Alt text](https://drive.google.com/uc?export=download&id=1I4-FAxAspM91ryLySnJJ5XOp3sqGVxpp)
 - Đầu tiên ta vào UI Longhorn ở cụm 1, ở góc trên màn hình chuyển sang tab "Volume"
 ![Alt text](https://drive.google.com/uc?export=download&id=1EVdXwmtARhDzE2hvQpV6K9O8jYdhTACF)
@@ -78,4 +78,4 @@ Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Đ
 ![Alt text](https://drive.google.com/uc?export=download&id=1bgP-yzifk5XqH4sdx7XXK4OW3bCIntfs)
 - Tiến hành deploy lại ứng dụng ở trên cụm 2, xem folder lh-example để chạy lại ứng dụng
 - Ta thấy ứng dụng hoạt động bình thường với toàn bộ dữ liệu được chuyển đổi từ cụm cũ sang cụm mới.
-## Chi tiết các bước xem ở video
+    ## **Chi tiết các bước xem ở video
