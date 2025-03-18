@@ -1,7 +1,7 @@
 # K8S LONGHORN BACKUP PROCESS
 
 ## Chuẩn bị.
-1. Có 2 cụm K8S chạy version 1.25 đổ lên
+1. Có cụm K8S chạy version 1.25 đổ lên
 2. Các cụm có bộ nhớ trong lớn, 50GB mỗi node là tốt (để 30 cũng được nhưng yếu)
 3. Có một ứng dụng để deploy 
 
@@ -63,4 +63,8 @@ wordpress-mysql   NodePort   10.98.178.225    <none>        3306:30036/TCP   85m
 
 Chạy wordpress, tạo account, thêm sửa xóa bài viết theo ý muốn. Để có dữ liệu được sinh ra vào database
 ## Quy trình backup và restore, migration.
-Xem thêm các quy trình tạo backup, restore backup ở video
+- Đầu tiên ta vào UI Longhorn ở cụm 1, ở góc trên màn hình chuyển sang tab "Volume"
+- Ta chọn 2 volume cần backup của ứng dụng wordpress, đánh tag label và để full backup ( lần đầu backup nên để full, sau có thể ko cần để tối ưu dụng lượng)
+- Chờ một lúc, vào tab "Backup" để xem volume của mình đã được backup hay chưa, ở đây cũng có thể xem thông tin về bản backup này
+- Tiến hành vào cụm 2 để triển khai ứng dụng, ai chỉ có 1 cụm lab có thể ```bash kubectl delete ns wordpress``` để xóa project đi.
+## Chi tiết các bước xem ở video
