@@ -10,7 +10,7 @@ Các tính năng nổi bật của Longhorn: <br>
 - Snapshot và Backup: Hỗ trợ tạo snapshot và backup của dữ liệu nhanh chóng, đảm bảo tính toàn vẹn và khôi phục dễ dàng khi cần. <br>
 - Khả năng nhân bản: Dữ liệu được nhân bản (replication) trên nhiều node trong cluster, giúp tăng cường tính sẵn sàng và bảo vệ dữ liệu khỏi lỗi phần cứng. <br>
 - Khôi phục dữ liệu nhanh chóng: Tính năng rebuild tự động giúp đảm bảo tính liên tục của dịch vụ ngay cả khi một node gặp sự cố.<br>
-- Hỗ trợ giao diện API: API của Longhorn cho phép tích hợp linh hoạt với các công cụ tự động hóa và quản lý hệ thống khác.<br>
+- Hỗ trợ giao diện API: API của Longhorn cho phép tích hợp linh hoạt với các công cụ tự động hóa và quản lý hệ thống khác.<br> q
 
 ## CHUẨN BỊ
 Mỗi node trong cụm Kubernetes, nơi Longhorn được cài đặt, phải đáp ứng các yêu cầu sau:
