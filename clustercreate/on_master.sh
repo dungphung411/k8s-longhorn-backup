@@ -17,3 +17,6 @@ kubectl cluster-info
 # network 
 kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+# generate join command
+kubeadm token create --print-join-command
