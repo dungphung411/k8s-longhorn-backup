@@ -54,7 +54,7 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 sudo apt-mark hold kubelet kubeadm kubectl
 
-
+# set network
 sudo apt-get install -y jq
 local_ip="$(ip --json addr show eth0 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"    # ip a xem minh la eth0 hay enp0s3 hay gi khac
 cat > /etc/default/kubelet << EOF
