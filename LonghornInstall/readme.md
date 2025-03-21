@@ -89,3 +89,5 @@ kubectl get secret -n longhorn-system
 List name secret ra <br>
 Backup target nào dùng secret nào thì điền tên nó vào <br>
 Lưu ý các backup target có thể trùng secret nhưng ko thể trùng url 
+
+![View the file on Google Drive](https://drive.google.com/file/d/1WBw_ClCfUCy_425hvO6FY0kqZkgW8vem/view?usp=sharing)
