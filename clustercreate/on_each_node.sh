@@ -15,7 +15,8 @@ net.ipv4.ip_forward                 = 1
 EOF
 
 # Apply sysctl params without reboot
-sudo sysctl --system
+sudo sysctl --system 2>&1 | grep -v "Invalid argument"
+
 
 sudo swapoff -a
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
