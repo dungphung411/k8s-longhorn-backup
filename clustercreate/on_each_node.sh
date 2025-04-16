@@ -55,6 +55,14 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 sudo apt-mark hold kubelet kubeadm kubectl
 
+
+## Set network interface variable
+network_interface=$(ip -o addr show | awk '{print $2}' | grep -E '^(eth|enp|wlp|eno)[0-9]' | head -n 1)
+
+# Verify the result
+echo "Detected network interface: $network_interface"
+# TY DIEN , THAY BIEN
+
 # set network
 sudo apt-get install -y jq
 local_ip="$(ip --json addr show eth0 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"    # ip a xem minh la eth0 hay enp0s3 hay gi khac
